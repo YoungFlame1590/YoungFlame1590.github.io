@@ -180,11 +180,11 @@ document.addEventListener('DOMContentLoaded', function () {
    * PhotoFigcaption
    */
   const addPhotoFigcaption = () => {
-    document.querySelectorAll('#article-container img').forEach(item => {
+    document.querySelectorAll('#article-container image').forEach(item => {
       const altValue = item.title || item.alt
       if (!altValue) return
       const ele = document.createElement('div')
-      ele.className = 'img-alt is-center'
+      ele.className = 'image-alt is-center'
       ele.textContent = altValue
       item.insertAdjacentElement('afterend', ele)
     })
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
    * Lightbox
    */
   const runLightbox = () => {
-    btf.loadLightbox(document.querySelectorAll('#article-container img:not(.no-lightbox)'))
+    btf.loadLightbox(document.querySelectorAll('#article-container image:not(.no-lightbox)'))
   }
 
   /**
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return
       }
 
-      btf.loadLightbox(item.querySelectorAll('img:not(.medium-zoom-image)'))
+      btf.loadLightbox(item.querySelectorAll('image:not(.medium-zoom-image)'))
 
       if (ig.getGroups().length === maxGroupKey) {
         btf.setLoading.remove(item)
